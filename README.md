@@ -65,16 +65,115 @@ node .\app
   }
   ```
 
+
+#### Obtener todos los superhéroes
+- **URL**: `/api/superheroes`
+- **Método**: `GET`
+- **Descripción**: Devuelve una lista de todos los superhéroes registrados.
+- **Respuesta de ejemplo**:
+  ```json
+  [
+      {
+          "id": 1,
+          "nombreSuperHeroe": "Omni-Man",
+          "nombreReal": "Nolan Grayson",
+          "edad": 500,
+          "poderes": ["Vuelo", "Fuerza sobrehumana"],
+          "planetaOrigen": "Viltrum",
+          "debilidad": "Emociones humanas",
+          "aliados": ["Invincible"],
+          "enemigos": ["Cecil Stedman"]
+      },
+      {
+          "id": 2,
+          "nombreSuperHeroe": "Invincible",
+          "nombreReal": "Mark Grayson",
+          "edad": 20,
+          "poderes": ["Vuelo", "Fuerza sobrehumana"],
+          "planetaOrigen": "Tierra",
+          "debilidad": "Inexperiencia",
+          "aliados": ["Omni-Man"],
+          "enemigos": ["Reanimen"]
+      }
+  ]
+  ```
+
+#### Obtener un superhéroe por ID
+- **URL**: `/api/superheroes/:id`
+- **Método**: `GET`
+- **Descripción**: Devuelve los datos de un superhéroe específico según su ID.
+- **Parámetros**:
+  - `id` (path): ID del superhéroe a buscar.
+- **Respuesta de ejemplo**:
+  ```json
+  {
+      "id": 1,
+      "nombreSuperHeroe": "Omni-Man",
+      "nombreReal": "Nolan Grayson",
+      "edad": 500,
+      "poderes": ["Vuelo", "Fuerza sobrehumana"],
+      "planetaOrigen": "Viltrum",
+      "debilidad": "Emociones humanas",
+      "aliados": ["Invincible"],
+      "enemigos": ["Cecil Stedman"]
+  }
+  ```
+
+#### Eliminar un superhéroe por ID
+- **URL**: `/api/superheroes/:id`
+- **Método**: `DELETE`
+- **Descripción**: Elimina un superhéroe específico según su ID.
+- **Parámetros**:
+  - `id` (path): ID del superhéroe a eliminar.
+- **Respuesta de ejemplo**:
+  ```json
+  {
+      "status": "success",
+      "message": "Superhéroe eliminado correctamente"
+  }
+  ```
+
+#### Eliminar todos los superhéroes
+- **URL**: `/api/superheroes`
+- **Método**: `DELETE`
+- **Descripción**: Elimina todos los superhéroes registrados en el sistema.
+- **Respuesta de ejemplo**:
+  ```json
+  {
+      "status": "success",
+      "message": "Todos los superhéroes han sido eliminados"
+  }
+  ```
+
+### Endpoints principales  
+
 ## Estructura del proyecto
 
 ```
 src/
+├── config/
+│   ├── dbConfig.mjs                   # Configuración de la base de datos
+├── controllers/
+├── models/
+│   ├── superHero.mjs                   # Modelo de datos de superhéroes
+├── repositories/
+│   ├── IRepository.mjs                  # Interfaz genérica para repositorios
+│   ├── SuperHeroRepository.mjs          # Repositorio específico para superhéroes
 ├── routes/
-│   ├── validations/
-│   │   ├── superHerovalidationRules.mjs
 │   ├── errorMiddleware/
-│   │   ├── superHeroeErrorMiddleware.mjs
-├── index.js
+│   │   ├── superHeroeErrorMiddleware.mjs # Middleware de manejo de errores
+│   ├── validations/
+│   │   ├── superHeroValidationRules.mjs  # Reglas de validación para superhéroes
+│   ├── superHeroRoutes.mjs               # Rutas para los endpoints de superhéroes
+├── services/
+│   ├── superheroesService.mjs            # Lógica de negocio de superhéroes
+├── views/
+│   ├── responseView.mjs                  # Formato de respuesta para la API
+├── .gitignore
+├── app.mjs                               # Archivo principal de la aplicación
+├── package-lock.json
+├── package.json
+└── README.md
 ```
 
 ## Dependencias principales
