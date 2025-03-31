@@ -38,7 +38,7 @@ node .\app
 ### Endpoints principales
 
 #### Registro de superhéroes
-- **URL**: `/api/superheroes`
+- **URL**: `/api/heroes`
 - **Método**: `POST`
 - **Cuerpo de la solicitud**:
   ```json
@@ -72,7 +72,7 @@ node .\app
   ```
 
 #### Edición de superhéroes
-- **URL**: `/api/superheroes/:id`
+- **URL**: `/api/heroes/:id`
 - **Método**: `PUT`
 - **Cuerpo de la solicitud**:
   ```json
@@ -101,7 +101,7 @@ node .\app
 
 
 #### Obtener todos los superhéroes
-- **URL**: `/api/superheroes`
+- **URL**: `/api/heroes`
 - **Método**: `GET`
 - **Descripción**: Devuelve una lista de todos los superhéroes registrados.
 - **Respuesta de ejemplo**:
@@ -133,7 +133,7 @@ node .\app
   ```
 
 #### Obtener un superhéroe por ID
-- **URL**: `/api/superheroes/:id`
+- **URL**: `/api/heroes/:id`
 - **Método**: `GET`
 - **Descripción**: Devuelve los datos de un superhéroe específico según su ID.
 - **Parámetros**:
@@ -154,7 +154,7 @@ node .\app
   ```
 
 #### Eliminar un superhéroe por ID
-- **URL**: `/api/superheroes/:id`
+- **URL**: `/api/heroes/:id`
 - **Método**: `DELETE`
 - **Descripción**: Elimina un superhéroe específico según su ID y devuelve los datos del superhéroe eliminado.
 - **Parámetros**:
@@ -178,7 +178,7 @@ node .\app
   ```
 
 #### Eliminar un superhéroe por nombre
-- **URL**: `/api/superheroes`
+- **URL**: `/api/heroes/nombresuperheroe`
 - **Método**: `DELETE`
 - **Descripción**: Elimina un superhéroe específico según su nombre y devuelve los datos del superhéroe eliminado.
 - **Cuerpo de la solicitud**:

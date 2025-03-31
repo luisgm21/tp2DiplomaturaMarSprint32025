@@ -105,7 +105,7 @@ export async function eliminarSuperHeroePorIdController(req ,res) {
 
 export async function eliminarSuperHeroePorNombreSuperHeroeController(req ,res) {
     try {
-        const { nombreSuperHeroe } = req.params;
+        const { nombreSuperHeroe } = req.body;
         const superHeroes = await buscarSuperHeroesPorAtributo("nombreSuperHeroe", nombreSuperHeroe);
         if(superHeroes.length === 0) return res.status(404).json({message: 'No hay super heroes con ese nombre.'}); 
         const superHeroeEliminado = await eliminarSuperHeroePorNombreSuperHeroe(nombreSuperHeroe);

@@ -117,3 +117,12 @@ export const editSuperHeroValidationRules = () => [
         .custom((enemigos) => enemigos.every(enemigo => typeof enemigo === 'string' && enemigo.trim().length >= 3 && enemigo.trim().length <= 60))
         .withMessage('Cada enemigo debe ser una cadena de texto con entre 3 y 60 caracteres, sin espacios en blanco'),
 ]
+
+export const validateDeleteSuperHeroByName = () => [
+    body('nombreSuperHeroe')
+        .notEmpty()
+        .withMessage('El nombre del superhéroe es obligatorio')
+        .isLength({ min: 3 , max: 60 })
+        .withMessage('El nombre del superhéroe debe tener entre 3 y 60 caracteres')
+        .trim(),
+]
