@@ -53,6 +53,23 @@ node .\app
       "enemigos": ["Cecil Stedman"]
   }
   ```
+- **Respuesta de ejemplo**:
+  ```json
+  {
+      "message": "Superhéroe registrado correctamente",
+      "data": {
+          "id": 1,
+          "nombreSuperHeroe": "Omni-Man",
+          "nombreReal": "Nolan Grayson",
+          "edad": 500,
+          "poderes": ["Vuelo", "Fuerza sobrehumana"],
+          "planetaOrigen": "Viltrum",
+          "debilidad": "Emociones humanas",
+          "aliados": ["Invincible"],
+          "enemigos": ["Cecil Stedman"]
+      }
+  }
+  ```
 
 #### Edición de superhéroes
 - **URL**: `/api/superheroes/:id`
@@ -62,6 +79,23 @@ node .\app
   {
       "nombreSuperHeroe": "Omni-Man",
       "edad": 501
+  }
+  ```
+- **Respuesta de ejemplo**:
+  ```json
+  {
+      "message": "Superhéroe actualizado correctamente",
+      "data": {
+          "id": 1,
+          "nombreSuperHeroe": "Omni-Man",
+          "nombreReal": "Nolan Grayson",
+          "edad": 501,
+          "poderes": ["Vuelo", "Fuerza sobrehumana"],
+          "planetaOrigen": "Viltrum",
+          "debilidad": "Emociones humanas",
+          "aliados": ["Invincible"],
+          "enemigos": ["Cecil Stedman"]
+      }
   }
   ```
 
@@ -122,29 +156,56 @@ node .\app
 #### Eliminar un superhéroe por ID
 - **URL**: `/api/superheroes/:id`
 - **Método**: `DELETE`
-- **Descripción**: Elimina un superhéroe específico según su ID.
+- **Descripción**: Elimina un superhéroe específico según su ID y devuelve los datos del superhéroe eliminado.
 - **Parámetros**:
   - `id` (path): ID del superhéroe a eliminar.
 - **Respuesta de ejemplo**:
   ```json
   {
-      "status": "success",
-      "message": "Superhéroe eliminado correctamente"
+      "message": "Superhéroe eliminado correctamente",
+      "data": {
+          "id": 1,
+          "nombreSuperHeroe": "Omni-Man",
+          "nombreReal": "Nolan Grayson",
+          "edad": 500,
+          "poderes": ["Vuelo", "Fuerza sobrehumana"],
+          "planetaOrigen": "Viltrum",
+          "debilidad": "Emociones humanas",
+          "aliados": ["Invincible"],
+          "enemigos": ["Cecil Stedman"]
+      }
   }
   ```
 
-#### Eliminar todos los superhéroes
+#### Eliminar un superhéroe por nombre
 - **URL**: `/api/superheroes`
 - **Método**: `DELETE`
-- **Descripción**: Elimina todos los superhéroes registrados en el sistema.
+- **Descripción**: Elimina un superhéroe específico según su nombre y devuelve los datos del superhéroe eliminado.
+- **Cuerpo de la solicitud**:
+  ```json
+  {
+      "nombreSuperHeroe": "Omni-Man"
+  }
+  ```
 - **Respuesta de ejemplo**:
   ```json
   {
       "status": "success",
-      "message": "Todos los superhéroes han sido eliminados"
+      "message": "Superhéroe eliminado correctamente",
+      "data": {
+          "id": 1,
+          "nombreSuperHeroe": "Omni-Man",
+          "nombreReal": "Nolan Grayson",
+          "edad": 500,
+          "poderes": ["Vuelo", "Fuerza sobrehumana"],
+          "planetaOrigen": "Viltrum",
+          "debilidad": "Emociones humanas",
+          "aliados": ["Invincible"],
+          "enemigos": ["Cecil Stedman"]
+      }
   }
   ```
-  
+
 ## Estructura del proyecto
 
 ```
