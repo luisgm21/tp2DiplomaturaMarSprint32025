@@ -144,9 +144,7 @@ node .\app
       "message": "Todos los superhéroes han sido eliminados"
   }
   ```
-
-### Endpoints principales  
-
+  
 ## Estructura del proyecto
 
 ```
