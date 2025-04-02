@@ -55,6 +55,10 @@ export const registerSuperHeroValidationRules = () => [
     ]
 
 export const editSuperHeroValidationRules = () => [
+    body('id')
+        .notEmpty()
+        .withMessage('El id es obligatorio')
+        .isMongoId(),
     body('nombreSuperHeroe')
         .optional()
         .notEmpty()
